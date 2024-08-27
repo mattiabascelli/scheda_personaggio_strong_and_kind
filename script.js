@@ -28,21 +28,21 @@ function creaPdf() {
     var extraI = '';
     //Bonus della Specie
     if (specie == 'Volpe') {
-        bonusSpecie = 'Evasione: Una volta per combattimento la volpe può scomparire dalla vista degli avversari e rimanere nascosto.';
+        bonusSpecie = 'Evasione: Una volta per combattimento la volpe puo scomparire dalla vista degli avversari e rimanere nascosto.';
         extraS = 'Al prossimo tiro per eseguire la sua Mossa la Volpe aggiungerà 1d6 al tiro del dado.';
     } else if (specie == 'Orso Bruno Marsicano') {
-        bonusSpecie = 'Zanne e Artigli: durante il combattimento, se colpisce, l’Orso Bruno Marsicano può effettuare un attacco extra';
+        bonusSpecie = 'Zanne e Artigli: durante il combattimento, se colpisce, l Orso Bruno Marsicano puo effettuare un attacco extra';
         extraS = 'corpo a corpo che infligge 1d6 con il morso.';
     } else if (specie == 'Lupo Appenninico') {
         bonusSpecie = 'Richiamo del Branco: Una volta per combattimento il Lupo ulula per motivare i suoi compagni donando loro 1d4 ';
         extraS = 'da aggiungere ai tiri per combattere.';
     } else if (specie == 'Cinghiale') {
-        bonusSpecie = 'Carica Selvaggia: L’avversario deve effettuare una prova di Agilità con Difficoltà 14. Se fallisce subisce 1d6 di danno ';
+        bonusSpecie = 'Carica Selvaggia: L’avversario deve effettuare una prova di Agilità con Difficolta 14. Se fallisce subisce 1d6 di danno ';
         extraS = 'e salta il suo prossimo turno. La carica può essere effettuata solo ad un bersaglio non adiacente.';
     } else if (specie == 'Cervo Mascio') {
         bonusSpecie = 'Incornata Feroce: Attacco che infligge 1d8 di danno e l’avversario viene spinto dietro di 1, 5 mt.';
     } else {
-        bonusSpecie = 'Istinto di Protezione: Guadagni un bonus di +4 alla prossima prova di Agilità o Istinto.';
+        bonusSpecie = 'Istinto di Protezione: Guadagni un bonus di +4 alla prossima prova di Agilita o Istinto.';
     }
 
 
@@ -108,7 +108,7 @@ function creaPdf() {
 
     //Bonus dell'indole
     if (indole == 'Bruto') {
-        bonusIndole = 'La difficoltà delle prove di Forza e Cotenna che non sono prove di combattimento sono ridotte di 2.';
+        bonusIndole = 'La difficolta delle prove di Forza e Cotenna che non sono prove di combattimento sono ridotte di 2.';
         if (bc == 5) {
             PF = 6
         } else { PF = 7 + bc; }
@@ -118,7 +118,7 @@ function creaPdf() {
         if (bc == 5) {
             PF = 7
         } else { PF = 8 + bc; }
-        bonusIndole = 'La difficoltà nelle prove di Agilità e Istinto che non sono prove di combattimento sono ridotte di 2. ';
+        bonusIndole = 'La difficolta nelle prove di Agilita e Istinto che non sono prove di combattimento sono ridotte di 2. ';
         extraI = 'Inoltre, lo scaltro aggiunge il suo modificatore di  Agilita al danno con le armi, invece che il modificatore di forza.';
         rDanno = '1d4'
     } else {
@@ -130,10 +130,13 @@ function creaPdf() {
             PF = 4
         } else { PF = 5 + bc; }
         rDanno = '1d4-1';
-        bonusIndole = 'La difficoltà nelle prove di Istinto che non so di combattimento sono ridotte di 2.';
+        bonusIndole = 'La difficolta nelle prove di Istinto che non so di combattimento sono ridotte di 2.';
         extraI = 'Le prove di Istinto sull’utilizzo di pergamene sono ridotte di 2.';
-    } -
+    } 
 
+    var doc = new jsPDF();
+    doc.setFont("Arial");
+    doc.setFontType("normal");
     doc.setFontSize(10);
     doc.text(70, 20, 'STRONG & KIND - www.hellfireabruzzo.it');
     doc.setFontSize(16);
@@ -146,13 +149,13 @@ function creaPdf() {
     doc.setFontSize(12);
     doc.text(20, 70, 'Mossa Speciale');
     doc.setFontSize(10);
-    doc.text(20, 80, bonusSpecie);
-    doc.text(20, 90, extraS);
+    doc.text(20, 80, '#' + bonusSpecie);
+    doc.text(20, 90, ' ' + extraS);
     doc.setFontSize(12);
     doc.text(20, 100, 'Bonus Indole');
     doc.setFontSize(10);
-    doc.text(20, 110, bonusIndole);
-    doc.text(20, 120, extraI);
+    doc.text(20, 110, '#'+ bonusIndole);
+    doc.text(20, 120, ' '+ extraI);
     doc.setFontSize(14);
     doc.text(40, 130, 'Vita Iniziale: ' + PF + ' [    ] - Riduzione Danno: ' + rDanno + ' + [Armatura:       ]');
     doc.setFontSize(12);
