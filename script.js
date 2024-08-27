@@ -1,9 +1,8 @@
 // JavaScript source code
 function creaPdf() {
     var doc = new jsPDF();
-    doc.setFont("Times New Roman");
+    doc.setFont("Verdana");
     doc.setFontType("normal");
-    doc.setFontSize(14);
 
     var nomePersonaggio = document.getElementById("NomePersonaggio").value;
     var origine = document.getElementById("Origine").value;
@@ -120,7 +119,7 @@ function creaPdf() {
             PF = 7
         } else { PF = 8 + bc; }
         bonusIndole = 'La difficoltà nelle prove di Agilità e Istinto che non sono prove di combattimento sono ridotte di 2. ';
-        extraI = 'Inoltre, lo scaltro aggiunge il suo modificatore di  Agilità al danno con le armi, invece che il modificatore di forza.';
+        extraI = 'Inoltre, lo scaltro aggiunge il suo modificatore di  Agilita al danno con le armi, invece che il modificatore di forza.';
         rDanno = '1d4'
     } else {
         if (bi == 5) {
@@ -135,14 +134,14 @@ function creaPdf() {
         extraI = 'Le prove di Istinto sull’utilizzo di pergamene sono ridotte di 2.';
     } -
 
-        doc.setFontSize(10);
+    doc.setFontSize(10);
     doc.text(70, 20, 'STRONG & KIND - www.hellfireabruzzo.it');
     doc.setFontSize(16);
     doc.text(20, 30, 'Nome Personaggio: ' + nomePersonaggio);
     doc.setFontType("normal");
     doc.setFontSize(14);
     doc.text(20, 40, 'Specie: ' + specie + ' - Indole: ' + indole + ' - Comune di Origine: ' + origine);
-    doc.text(70, 50, 'Forza: ' + forza + ' [' + bonusForza + ']  - Agilità: ' + agilita + ' [' + bonusAgilita + ']');
+    doc.text(70, 50, 'Forza: ' + forza + ' [' + bonusForza + ']  - Agilita: ' + agilita + ' [' + bonusAgilita + ']');
     doc.text(70, 60, 'Istinto: ' + istinto + ' [' + bonusIstinto + '] - Cotenna: ' + cotenna + ' [' + bonusCotenna + ']');
     doc.setFontSize(12);
     doc.text(20, 70, 'Mossa Speciale');

@@ -7,68 +7,100 @@
     <title>Crea Scheda Personaggio - STRONG & KIND</title>
     <link href="stile.css" rel="stylesheet" type="text/css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script src="script.js"></script>
 </head>
 <body>
     <div class="foglio">
         <h1>CREA LA TUA SCHEDA</h1>
         <form>
-            <label for="NomePersonaggio">Inserisci nome del Personaggio:</label>
-            <input type="text" id="NomePersonaggio" name="NomePersonaggio" /><br />
-            <label for="Origine">Inserisci Comune di Origine:</label>
-            <input type="text" id="Origine" name="Origine" /><br />
-            <label for="Forza">Valore Forza:</label>
-            <select name="Forza" id="Forza">
-                <option value="8">8</option>
-                <option value="10">10</option>
-                <option value="12">12</option>
-                <option value="14">14</option>
-                <option value="16">16</option>
-            </select>
-            <label for="Agilita">Valore Agilità:</label>
-            <select name="Agilita" id="Agilita">
-                <option value="8">8</option>
-                <option value="10">10</option>
-                <option value="12">12</option>
-                <option value="14">14</option>
-                <option value="16">16</option>
-            </select><br />
-            <label for="Istinto">Valore Istinto:</label>
-            <select name="Istinto" id="Istinto">
-                <option value="8">8</option>
-                <option value="10">10</option>
-                <option value="12">12</option>
-                <option value="14">14</option>
-                <option value="16">16</option>
-            </select>
-            <label for="Cotenna">Valore Cotenna:</label>
-            <select name="Cotenna" id="Cotenna">
-                <option value="8">8</option>
-                <option value="10">10</option>
-                <option value="12">12</option>
-                <option value="14">14</option>
-                <option value="16">16</option>
-            </select><br />
-            <label for="Specie">Scegli la tua Specie:</label>
-            <select name="Specie" id="Specie">
-                <option value="Cervo Maschio">Cervo Maschio</option>
-                <option value="Cervo Femmina">Cervo Femmina</option>
-                <option value="Cinghiale">Cinghiale</option>
-                <option value="Lupo Appenninico">Lupo Appenninico</option>
-                <option value="Orso Bruno Marsicano">Orso Bruno Marsicano</option>
-                <option value="Volpe">Volpe</option>
-            </select><br />
-            <label for="Indole">Scegli la tua Indole:</label>
-            <select name="Indole" id="Indole">
-                <option value="Bruto">Bruto</option>
-                <option value="Scaltro">Scaltro</option>
-                <option value="Mistico">Mistico</option>
-            </select><br />
-                     <div class="d20">
-                         <input type="button" value="CREA PDF" onclick="creaPdf();" />
-                         <p><a href="https://www.hellfireabruzzo.it">www.hellfireabruzzo.it</a></p>
-                         <p>Pagina in Aggiornamento - ver. 0.2</p>
-                     </div>
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1">Nome Personaggio</span>
+                <input class="form-control" type="text" id="NomePersonaggio" name="NomePersonaggio" />
+            </div>
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon2">Luogo di Origine</span>
+                <input class="form-control" type="text" id="Origine" name="Origine" />
+            </div>
+
+            <div class="input-group mb-3">
+                <label class="input-group-text" for="Specie">Specie</label>
+                <select class="form-select" id="Specie">
+                    <option selected>Scelgi...</option>
+                    <option value="Cervo Maschio">Cervo Maschio</option>
+                    <option value="Cervo Femmina">Cervo Femmina</option>
+                    <option value="Cinghiale">Cinghiale</option>
+                    <option value="Lupo Appenninico">Lupo Appenninico</option>
+                    <option value="Orso Bruno Marsicano">Orso Bruno Marsicano</option>
+                    <option value="Volpe">Volpe</option>
+                </select>
+            </div>
+
+            <div class="input-group mb-3">
+                <label class="input-group-text" for="Indole">Indole</label>
+                <select class="form-select" id="Indole">
+                    <option selected>Scelgi...</option>
+                    <option value="Bruto">Bruto</option>
+                    <option value="Scaltro">Scaltro</option>
+                    <option value="Mistico">Mistico</option>
+                </select>
+            </div>
+
+            <hr />
+            <div class="input-group mb-3">
+                <label class="input-group-text" for="Forza"> Valore Forza</label>
+                <select class="form-select" id="Forza">
+                    <option selected>Scegli...</option>
+                    <option value="8">8</option>
+                    <option value="10">10</option>
+                    <option value="12">12</option>
+                    <option value="14">14</option>
+                    <option value="16">16</option>>
+                </select>
+            </div>
+
+            <div class="input-group mb-3">
+                <label class="input-group-text" for="Agilita">Valore Agilità</label>
+                <select class="form-select" id="Agilita">
+                    <option selected>Scegli...</option>
+                    <option value="8">8</option>
+                    <option value="10">10</option>
+                    <option value="12">12</option>
+                    <option value="14">14</option>
+                    <option value="16">16</option>
+                </select>
+
+            </div>
+
+            <div class="input-group mb-3">
+                <label class="input-group-text" for="Istinto">Valore Istinto</label>
+                <select class="form-select" id="Istinto">
+                    <option selected>Scelgi...</option>
+                    <option value="8">8</option>
+                    <option value="10">10</option>
+                    <option value="12">12</option>
+                    <option value="14">14</option>
+                    <option value="16">16</option>
+                </select>
+            </div>
+
+            <div class="input-group mb-3">
+                <label class="input-group-text" for="Cotenna">Valore Cotenna</label>
+                <select class="form-select" id="Cotenna">
+                    <option selected>Scegli...</option>
+                    <option value="8">8</option>
+                    <option value="10">10</option>
+                    <option value="12">12</option>
+                    <option value="14">14</option>
+                    <option value="16">16</option>
+                </select>
+
+            </div>
+            <div class="d20">
+                <input type="button" value="CREA PDF" onclick="creaPdf();" />
+                <p><a href="https://www.hellfireabruzzo.it">www.hellfireabruzzo.it</a></p>
+                <p>Pagina in Aggiornamento - ver. 0.2</p>
+            </div>
         </form>
         </div>
         <script type="text/javascript">
