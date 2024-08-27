@@ -41,7 +41,7 @@ function creaPdf() {
         bonusSpecie = 'Richiamo del Branco: Una volta per combattimento il Lupo ulula per motivare i suoi compagni donando loro 1d4 ';
         extraS = 'da aggiungere ai tiri per combattere.';
     } else if (specie == 'Cinghiale') {
-        bonusSpecie = 'Carica Selvaggia: L’avversario deve effettuare una prova di Agilità con Difficolta 14. Se fallisce subisce 1d6 di danno ';
+        bonusSpecie = 'Carica Selvaggia: L avversario deve effettuare una prova di Agilità con Difficolta 14. Se fallisce subisce 1d6 di danno ';
         extraS = 'e salta il suo prossimo turno. La carica può essere effettuata solo ad un bersaglio non adiacente.';
     } else if (specie == 'Cervo Mascio') {
         bonusSpecie = 'Incornata Feroce: Attacco che infligge 1d8 di danno e l’avversario viene spinto dietro di 1, 5 mt.';
