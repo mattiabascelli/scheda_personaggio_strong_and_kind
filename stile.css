@@ -64,7 +64,32 @@ a:hover {
         .d20 input:active {
             background-color: green;
         }
+.d21 {
+    text-align: center;
+    margin: 20px;
+    padding: 20px;
+}
 
+    .d21 input {
+        background-color: darkgreen;
+        color: white;
+        padding: 5px;
+        margin: 5px;
+        width: 50%;
+        height: auto;
+        max-width: 350px;
+        font-size: 18px;
+        border-radius: 10px;
+    }
+
+        .d21 input:hover {
+            background-color: brown;
+            cursor: pointer;
+        }
+
+        .d21 input:active {
+            background-color: green;
+        }
 .black {
     background-color: black;
     max-width: 300px;
